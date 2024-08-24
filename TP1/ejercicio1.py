@@ -7,6 +7,7 @@ el máximo hallado, o un mensaje informativo si éste no existe.
 """
 
 
+# funciones
 def obtener_mayor(*args) -> int:
     """
     Esta funcion obtiene el mayor estricto de 3 numeros enteros
@@ -30,6 +31,9 @@ def menu() -> None:
             tupla_numeros = tuple(map(int, tupla_numeros.split(",")))
             if len(tupla_numeros) != 3:
                 raise ValueError("Debe ingresar exactamente tres valores")
+            for valor in tupla_numeros:
+                if valor <= 0:
+                    raise ValueError("Verifique los datos ingresados!")
             break
         except ValueError as e:
             print(f"Error: {e}. Verifique que el valor ingresado sea correcto!")
@@ -45,5 +49,6 @@ def menu() -> None:
     return None
 
 
+# codigo principal
 if __name__ == "__main__":
     menu()

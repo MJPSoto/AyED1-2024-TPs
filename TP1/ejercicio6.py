@@ -5,6 +5,7 @@ parámetros. Por ejemplo, si recibe 1234 y 567 debe devolver 1234567. No se perm
 """
 
 
+# funciones
 def concatenar_numeros(num1: int, num2: int) -> str:
     return f"{num1}{num2}"  # mondongo
 
@@ -18,6 +19,9 @@ def menu() -> None:
             )  # Spliteo por la coma y despues esos valores los casteo a int con el map, función de orden superior
             if len(tupla_numeros) != 2:
                 raise ValueError("Verifique los datos ingresados!")
+            for valor in tupla_numeros:
+                if valor <= 0:
+                    raise ValueError("Verifique los datos ingresados!")
             break
         except ValueError as e:
             print(f"Error: {e}")
@@ -28,15 +32,18 @@ def menu() -> None:
     test_validacion()
     return None
 
+
 def test_validacion() -> None:
     """
     Esta función es para validar el funcionamiento del programa
     """
-    assert(concatenar_numeros(1234,567)) == "1234567"
-    assert(concatenar_numeros(12,3)) == "123"
-    assert(concatenar_numeros(33,12)) != "12"
-    assert(concatenar_numeros(3,456987)) == "3456987"
+    assert (concatenar_numeros(1234, 567)) == "1234567"
+    assert (concatenar_numeros(12, 3)) == "123"
+    assert (concatenar_numeros(33, 12)) != "12"
+    assert (concatenar_numeros(3, 456987)) == "3456987"
     return None
 
+
+# codigo principal
 if __name__ == "__main__":
     menu()
