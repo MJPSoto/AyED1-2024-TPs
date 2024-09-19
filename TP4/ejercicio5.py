@@ -9,7 +9,15 @@ c. Utilizando la función filter
 """
 
 def filtrar_palabras_ciclos(cadena: str, numero: int) -> str:
-    lista_palabras = cadena.split()  # Separo la cadena pq supongo que es una frase separada por espacios ? mondongo
+    """
+    Está función toma una cadena, la separa por palabras y se fija si la longitud de esa palabra es mayor 
+    al numero que ingresamos, en base a eso separa las palabras con mayor longitud que el numero y las que no
+    
+    pre: Está función necesita como parametro una cadena en formato str y un numero cualquiera en formato entero 
+    
+    post: Está función devuelve otra cadena con las palabras que tienen mayor o igual longitud que nuestro numero 
+    """
+    lista_palabras = cadena.split()
     cadena_nueva = ""
     for palabra in lista_palabras:
         if len(palabra) >= numero:
@@ -17,14 +25,37 @@ def filtrar_palabras_ciclos(cadena: str, numero: int) -> str:
     return cadena_nueva.strip()  #Elimino el ultimo espacio
 
 def filtrar_palabras_comprension(cadena: str, numero: int) -> str:
+    """
+    Está función toma una cadena, la separa por palabras y se fija si la longitud de esa palabra es mayor 
+    al numero que ingresamos, en base a eso separa las palabras con mayor longitud que el numero y las que no
+    
+    pre: Está función necesita como parametro una cadena en formato str y un numero cualquiera en formato entero 
+    
+    post: Está función devuelve otra cadena con las palabras que tienen mayor o igual longitud que nuestro numero 
+    """
     lista_palabras = cadena.split()
     return " ".join(list(palabra for palabra in lista_palabras if len(palabra) >= numero))
 
 def filtrar_palabras_filter(cadena: str, numero: int) -> str:
+    """
+    Está función toma una cadena, la separa por palabras y se fija si la longitud de esa palabra es mayor 
+    al numero que ingresamos, en base a eso separa las palabras con mayor longitud que el numero y las que no
+    
+    pre: Está función necesita como parametro una cadena en formato str y un numero cualquiera en formato entero 
+    
+    post: Está función devuelve otra cadena con las palabras que tienen mayor o igual longitud que nuestro numero 
+    """
     lista_palabras = cadena.split()
     return " ".join(filter(lambda palabra: len(palabra) >= numero, lista_palabras))
 
 def validar_fn()->None:
+    """
+    Está función valida el funcionamiento de la funcion 'filtrar_palabras_ciclos, filtrar_palabras_comprension, filtrar_palabras_filter'
+    
+    pre: Está función no recibe ningun parametro
+    
+    post: Está función no devuelve nada
+    """
     assert(filtrar_palabras_ciclos("No se me ocurre nada", 3)) == "ocurre nada"
     assert(filtrar_palabras_comprension("No se me ocurre nada", 3)) == "ocurre nada"
     assert(filtrar_palabras_filter("No se me ocurre nada", 3)) == "ocurre nada"

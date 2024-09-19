@@ -5,7 +5,15 @@ de una cadena dada. La cadena y el valor de N se pasan como parámetros.
 
 
 def cortar_ultimos_caracteres(cadena: str, numero: int) -> str:
-    return cadena[numero::] #mondongo ?
+    """
+    Está función creo una subcadena con los ultimos caracteres de una cadena n
+    
+    pre: Está función necesita una cadeda n en formato str y un numero en formato int
+   
+    post: Está función devuelve una subcadena que son los caracteres desde la posición que se 
+    ingreso hasta el final de la cadena
+    """
+    return cadena[numero::]
 
 
 def menu() -> None:
