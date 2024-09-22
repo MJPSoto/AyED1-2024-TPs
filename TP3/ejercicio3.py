@@ -13,8 +13,6 @@ def imprimir_matriz(matriz)->None:
     for fila in matriz:
         print(fila)
 
-
-
 def menu() -> None:
     while True:
         try:

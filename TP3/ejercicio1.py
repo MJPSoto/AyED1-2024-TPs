@@ -36,7 +36,7 @@ def ordenar_filas_matriz(matriz: list) -> list:
     return matriz
 
 
-def validar_rango(fila1: int, fila2: int, matriz: list):
+def validar_rango(fila1: int, fila2: int, matriz: list) ->bool:
     return fila1 < 0 or fila2 < 0 or fila1 >= len(matriz) or fila2 >= len(matriz)
 
 
@@ -63,7 +63,7 @@ def transponer_matriz(matriz: list) -> None:
             matriz[i][j], matriz[j][i] = matriz[j][i], matriz[i][j]
 
 
-def validar_matriz(campo1: int, matriz: list):
+def validar_matriz(campo1: int, matriz: list) ->bool:
     return campo1 < 0 or campo1 >= len(matriz[0])
 
 
